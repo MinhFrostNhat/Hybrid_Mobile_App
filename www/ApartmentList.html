@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/fontawesome-free-5.15.4-web/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <title>Welcome to  Rental Apartments Finder</title>
+</head>
+<body>
+    <div data-role="page" id="apartment-list-page">
+        <!-- Preloader-->
+        <div class="preloader d-flex align-items-center justify-content-center" id="preloader">
+            <div class="spinner-grow text-primary" role="status">
+                <div class="sr-only">Loading...</div>
+            </div>
+        </div>
+        <!-- Internet Connection Status-->
+        <div class="internet-connection-status" id="internetStatus"></div>
+        <!--Header-->
+        <div data-role="header" data-position="fixed" class=" header-area">
+            <div class="container">
+                <!-- Header Content-->
+                <div class="header-content header-style-four position-relative d-flex align-items-center justify-content-center">
+                    <div class="page-heading">
+
+                        <span>...</span>
+                        <h6 class="mb-0">Apartment List</h6>
+                      
+                       
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--Main-->
+        <div data-role="main" class="ui-content page-content-wrapper px-0" style="min-height: calc(100vh - 100px);">
+            <div class="container ">
+                
+                    <div class="card-body p-2">
+                        <div class="chat-search-box">
+                            <form id="frm-rental-search">
+                                <div class="input-group"><span class="input-group-text" id="searchbox"><i class="bi bi-search"></i></span>
+                                    <input data-role="none" class="form-control" id="search-key-word" type="search" placeholder="Search rental you want" aria-describedby="searchbox">
+                                </div>
+                            </form>
+                        </div>
+                    
+                </div>
+            </div>
+
+            <div class="container px-0" >
+                <div class="top-products-area product-list-wrap">
+                    <div id="list-apartment" class="row g-3" data-role="listview">
+                        <div class="col-12 p-0">
+                            <div class="apartment-list">
+                                <img src="">
+                                <a href="#">
+                                    <div class="apartment-list-content p-2">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <p class="m-0 w-100" ><span>h</span></p>
+
+                                            <p class="m-0 w-100" style="text-align: right;"><span id="bedroom"></span><i class="fas fa-bed px-1"></i><span class="px-2">|</span><span class="pr-2" id="bathroom">2</span><i class="fas fa-bath px-1"></i> </p>
+                                        </div>
+                                            <hr class="m-1">
+                                        <!-- Apartment Address-->
+                                        <p class="m-0 w-100 textWrapping"></p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-12 p-0 m-0">
+                            <div class="apartment-list">
+                                <img src="">
+                                <a href="#">
+                                    <div class="apartment-list-content p-2">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <p class="m-0 w-100" ><span></span></p>
+
+                                            <p class="m-0 w-100" style="text-align: right;"><span id="bedroom"></span><i class="fas fa-bed px-1"></i><span class="px-2">|</span><span class="pr-2" id="bathroom">2</span><i class="fas fa-bath px-1"></i> </p>
+                                        </div>
+                                        <hr class="m-1">
+                                        <!-- Apartment Address-->
+                                        <p class="m-0 w-100 textWrapping"></p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Footer-->
+        <div data-role='footer' data-position='fixed' class="footer-nav-area">
+            <div class="container px-0">
+                <!-- Paste your Footer Content from here-->
+                <!-- Footer Content-->
+                <div class="footer-nav position-relative">
+                    <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+                       
+
+                        <li class="active"><a rel="external" href="#apartment-list-page"><span><i class="fas fa-th m-2" style="font-size:1.25rem"></i></span></a></li>
+
+                        <li> <a rel="external" href="PostRentalInfo.html"> <span> <i class="fas fa-plus-circle m-2" style="font-size:1.25rem"></i></span></a></li>
+
+                        
+
+                        <li><a rel="external" href="index.html#setting-page"><span> <i class="fas fa-cog m-2" style="font-size:1.25rem" ></i></span> </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Rental Info Detail-->
+    <div data-role="page" id="rental-detail-page">
+        <!--Header-->
+        <div data-role="header" data-position='fixed' class="header-area headerDetail">
+            <div class="container d-flex align-items-center justify-content-between px-3">
+                <!-- Back Button-->
+                <div class="back-button"><a href="#apartment-list-page"><i class="fas fa-arrow-left"></i></a></div>
+
+                <!--Edit Button Group-->
+                <!--After Loading complete page-->
+                <div>
+                    <ul class="editButtonGroup">
+                        <li>
+                           
+                        </li>
+                        <li>
+                            
+                        </li>
+                    </ul>
+                </div>
+                <!--After scroll up over ranger-->
+                <!-- Options-->
+                <div data-role="none" class="dropstart " style="display: none;">
+                    <button data-role="none" class="btn dropdown-toggle p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-three-dots-vertical"></i></button>
+                    <ul data-role="none" class="dropdown-menu p-1 dropdown-menu-post">
+                        <li><a href="#"><i class="bi bi-pencil-square px-1 "></i>Edit</a></li>
+                        <li><a href="#"><i class="bi bi-trash px-1 "></i>Delete</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--Main-->
+        <div data-role="main" class="ui-content page-content-wrapper p-0">
+            <div class=" blog-detail-content">
+                <div class="container p-0">
+                    <div class="blog-details-post-thumbnail position-relative">
+                        <!-- Post Image--><img id="rental-img" class=" w-100" src="img/RAP1.jpg" alt="">
+                    </div>
+                </div>
+                <div style="background-image: url('https://image.freepik.com/free-vector/hand-painted-watercolor-nature-background_23-2148941599.jpg');">
+               
+                    <div class="table-wrapper">
+                        <table class="fl-table">
+                            <thead>
+                            <tr>
+                                <th>Price</th>
+                                <th>Bedroom</th>
+                                <th>Bathroom</th>
+                                <th>Furniture types</th>
+                                <th>Type</th>
+                                <th>Property name</th>
+                                <th>Address</th>
+                                <th>Post date</th>
+                                <th>Note</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td> <span id="price"></span><span>/month</span></td>
+                                <td><span id="bedroom"></span> <i class="fas fa-bed px-1"></i></td>
+                                <td><span class="pr-2" id="bathroom"></span> <i class="fas fa-bath px-1"></i></td>
+                                <td><span class="font-weight-bold text-success" id="status"> </span></td>
+                                <td><span class="font-weight-bold text-success" id="type"> </span></td>
+                                <td><span class="pr-2" id="sqft"></span><span class="px-1"></span></td>
+                                <td><span class="mb-3 w-100 textWrapping" id="address"></span></td>
+                                <td>  <small id="rental-date-modify" class="mb-2"></small></td>
+                                <td><p id="description">.</p></td>
+                            </tr>
+                            <tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Comment Form-->
+                <div class="ratings-submit-form pb-3">
+                    <div class="container">
+                        <h6 class="mb-3">Submit a comment</h6>
+                        <form id="frm-post-comment">
+                            <div class="form-group">
+                                <textarea id="comment-content" class="form-control mb-3 border-0" name="comment" cols="30" rows="10" placeholder="Write a comment">                           </textarea>
+                            </div>
+                            <button class="btn btn-sm btn-primary" type="submit">Post Comment</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- All Comments-->
+                <div class="rating-and-review-wrapper pb-3 mt-3" style="margin-bottom: 100px;">
+                    <div class="container">
+                        <h6 class="mb-3">All comments</h6>
+                        <!-- Rating Review-->
+                        <div class="rating-review-content">
+                            <ul class="ps-2" id="list-comment" class="listCommentStyle" data-role="listview">
+                                <li class="single-user-review d-flex">
+                                   
+                                </li>
+                                
+                                   
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+
+    </div>
+    
+
+    <!--All Script-->
+    <script src="cordova.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/default/dark-mode-switch.js"></script>
+    <script src="js/ion.rangeSlider.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/default/active.js"></script>
+    <script src="js/default/clipboard.js"></script>
+    <!-- PWA-->
+    <script src="js/pwa.js"></script>
+    <script src="js/index.js"></script>
+    
+
+    <style>
+        *{
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+        body{
+            font-family: Helvetica;
+            -webkit-font-smoothing: antialiased;
+            background: rgba( 71, 147, 227, 1);
+        }
+        h2{
+            text-align: center;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: white;
+            padding: 30px 0;
+        }
+        
+        /* Table Styles */
+        
+        .table-wrapper{
+            margin: 10px 70px 70px;
+            box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+        }
+        
+        .fl-table {
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: normal;
+            border: none;
+            border-collapse: collapse;
+            width: 800%;
+            max-width: 100%;
+            white-space: nowrap;
+            background-color: white;
+        }
+        
+        .fl-table td, .fl-table th {
+            text-align: center;
+            padding: 8px;
+        }
+        
+        .fl-table td {
+            border-right: 1px solid #f8f8f8;
+            font-size: 12px;
+        }
+        
+        .fl-table thead th {
+            color: #ffffff;
+            background: #4FC3A1;
+        }
+        
+        
+        .fl-table thead th:nth-child(odd) {
+            color: #ffffff;
+            background: #324960;
+        }
+        
+        .fl-table tr:nth-child(even) {
+            background: #F8F8F8;
+        }
+        
+        /* Responsive */
+        
+        @media (max-width: 767px) {
+            .fl-table {
+                display: block;
+                width: 100%;
+            }
+            .table-wrapper:before{
+                content: "Scroll horizontally >";
+                display: block;
+                text-align: right;
+                font-size: 11px;
+                color: white;
+                padding: 0 0 10px;
+            }
+            .fl-table thead, .fl-table tbody, .fl-table thead th {
+                display: block;
+            }
+            .fl-table thead th:last-child{
+                border-bottom: none;
+            }
+            .fl-table thead {
+                float: left;
+            }
+            .fl-table tbody {
+                width: auto;
+                position: relative;
+                overflow-x: auto;
+            }
+            .fl-table td, .fl-table th {
+                padding: 20px .625em .625em .625em;
+                height: 60px;
+                vertical-align: middle;
+                box-sizing: border-box;
+                overflow-x: hidden;
+                overflow-y: auto;
+                width: 120px;
+                font-size: 13px;
+                text-overflow: ellipsis;
+            }
+            .fl-table thead th {
+                text-align: left;
+                border-bottom: 1px solid #f7f7f9;
+            }
+            .fl-table tbody tr {
+                display: table-cell;
+            }
+            .fl-table tbody tr:nth-child(odd) {
+                background: none;
+            }
+            .fl-table tr:nth-child(even) {
+                background: transparent;
+            }
+            .fl-table tr td:nth-child(odd) {
+                background: #F8F8F8;
+                border-right: 1px solid #E6E4E4;
+            }
+            .fl-table tr td:nth-child(even) {
+                border-right: 1px solid #E6E4E4;
+            }
+            .fl-table tbody td {
+                display: block;
+                text-align: center;
+            }
+        }
+    </style>
+    
+</body>
+
+</html>

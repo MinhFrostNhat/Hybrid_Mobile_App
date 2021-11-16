@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/fontawesome-free-5.15.4-web/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <title>Welcome to  Rental Apartments Finder</title>
+</head>
+<body>
+    <!-- Register Wrapper Area-->
+    <div data-role="page" class="login-wrapper" id='page-create'>
+        <div data-role="header" data-position="fixed" class="d-flex justify-content-between header-area">
+            <!-- Back Button-->
+            
+
+            <div class="logo-wrapper"><a href="#page-home"><img width="32" height="32" src="img/icons/x.png" alt=""></a></div>
+
+            <div style="width: 2rem; height: 2rem; "></div>
+        </div>
+        <div style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGDBPvxFxpAlqFlIDBnHJOQPAF4O-2OzReGJASItftpfThOW37pnyDp8h7ixLozRrSUuU&usqp=CAU');">
+
+        <div data-role="main" class="ui-content d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-sm-9 col-md-7 col-lg-6 col-xl-5">
+                        
+                        <!-- Register Form-->
+                        <div class="register-form pt-4" >
+                            <h4 data-role="none" class="mb-3 text-center">Sign up to RentalZ</h4>
+                            <form id='frm-register'>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" placeholder="Email" id="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" placeholder="Username" id="username" required>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control input-psswd" type="password" placeholder="New password" id='password' required>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control input-psswd" type='password' placeholder='Confirm Password' id='password-confirm' required>
+                                </div>
+
+                                <div class="form-check mb-3">
+                                    <input data-role="none" class="form-check-input"  id="checkedCheckbox" type="checkbox" value="" checked>
+                                    <label class="form-check-label text-muted fw-normal"  for="checkedCheckbox">I agree with the terms &amp; privacy policy.</label>
+                                </div>
+
+                                <button data-role="none" class="btn btn-primary w-100" type="submit" >Sign Up</button>
+                            </form>
+                        </div>
+                        <!-- Login Meta-->
+                        <div class="login-meta-data text-center" style="margin-bottom:80px;">
+                            <p class="mt-3 mb-3">Already have an account? <a rel="external" data-role="none" class="link" href="#page-login">Login</a></p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!--Confirm Form-->
+            <div data-role="popup" id="create-account-confirm" data-overlay-theme="b" style="max-width:400px;">
+                <div data-role='header' style="background-color:green;"><h1>Confirm Account</h1></div>
+                <div class="ui-content" data-role='main'>
+                    <h3 class="ui-title">Are your sure that is your account information?</h3>
+                    <form id="frm-register-confirm">
+
+                        <table style="margin:10px 0 20px 0">
+                            <tr>
+                                <th data-priority="1">Email:</th>
+                                <th id="email"></th>
+                            </tr>
+                            <tr>
+                                <th data-priority="1">Username:</th>
+                                <th id="username"></th>
+                            </tr>
+                          
+                        </table>
+                        <button  type="submit" class="ui-btn ui-shadow ui-btn-icon-left ui-icon-check">Confirm</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Login Wrapper Area-->
+    <div data-role="page" class="login-wrapper" id='page-login'>
+        <div data-role="header" data-position='fixed'  class="header-area d-flex align-items-center justify-content-between px-4">
+            <!-- Back Button-->
+            
+
+            <div class="logo-wrapper"><a href="#page-home"><img width="32" height="32" src="img/icons/x.png" alt=""></a></div>
+
+            <div>
+                <div>
+                    
+                </div>
+              
+            </div>
+        </div>
+
+        <div data-role='main' class="ui-content d-flex align-items-center justify-content-center" style="min-height: calc(100vh - 40px);">
+            <div class="container">
+                <div style="background-image: url('https://img.freepik.com/free-photo/hand-painted-watercolor-background-with-sky-clouds-shape_24972-1095.jpg?size=626&ext=jpg');">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-sm-9 col-md-7 col-lg-6 col-xl-5">
+                        
+                        <!-- Register Form-->
+                        <div class="register-form mt-4 px-4">
+                            <h6 class="mb-3 text-center">Log in.</h6>
+                            <form action="js/index.js" id="frm-login">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" placeholder="Username" id="username" required>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" type="password" placeholder="Enter Password" id="password" required>
+                                </div>
+                                <button data-role="none" class="btn btn-primary w-100" type="submit" >Sign In</button>
+                            </form>
+                        </div>
+
+                        <!-- Login Meta-->
+                    </div>
+                    <div> <p class="mb-0">Didn't have an account? <a rel="external" class="link" href="#page-create">Sign up Now</a></p></div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <div data-role="page" id="apartment-list-page">
+        <!-- Preloader-->
+        <div class="preloader d-flex align-items-center justify-content-center" id="preloader">
+            <div class="spinner-grow text-primary" role="status">
+                <div class="sr-only">Loading...</div>
+            </div>
+        </div>
+        <!-- Internet Connection Status-->
+        <div class="internet-connection-status" id="internetStatus"></div>
+        <!--Header-->
+        <div data-role="header" data-position="fixed" class=" header-area">
+            <div class="container">
+                <!-- Header Content-->
+                <div class="header-content header-style-four position-relative d-flex align-items-center justify-content-center">
+                    <div class="page-heading">
+                        <span>...</span>
+                        <h6 class="mb-0">Apartment List</h6>
+                        <div>
+                       
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+            </div>
+        </div>
+
+        <!--Main-->
+        <div data-role="main" class="ui-content page-content-wrapper px-0" style="min-height: calc(100vh - 100px);">
+            <div class="container ">
+                <div class="card mb-2">
+                    <div class="card-body p-2">
+                        <div class="chat-search-box">
+                            <form id="frm-rental-search">
+                                <div class="input-group"><span class="input-group-text" id="searchbox"><i class="bi bi-search"></i></span>
+                                    <input data-role="none" class="form-control" id="search-key-word" type="search" placeholder="Search rental you want" aria-describedby="searchbox">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container px-0" >
+                <div class="top-products-area product-list-wrap">
+                    <div id="list-apartment" class="row g-3" data-role="listview">
+                        <div class="col-12 p-0">
+                            <div class="apartment-list">
+                                <img src="img/RAP2.jpg">
+                                <a href="#">
+                                    <div class="apartment-list-content p-2">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <p class="m-0 w-100" ><span>/month</span></p>
+
+                                            <p class="m-0 w-100" style="text-align: right;"><span id="bedroom">2</span><i class="fas fa-bed px-1"></i><span class="px-2">|</span><span class="pr-2" id="bathroom">2</span><i class="fas fa-bath px-1"></i> </p>
+                                        </div>
+                                            <hr class="m-1">
+                                        <!-- Apartment Address-->
+                                        <p class="m-0 w-100 textWrapping"></p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-12 p-0 m-0">
+                            <div class="apartment-list">
+                                <img src="img/RAP2.jpg">
+                                <a href="#">
+                                    <div class="apartment-list-content p-2">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <p class="m-0 w-100" ><span>/month</span></p>
+
+                                            <p class="m-0 w-100" style="text-align: right;"><span id="bedroom"></span><i class="fas fa-bed px-1"></i><span class="px-2">|</span><span class="pr-2" id="bathroom">2</span><i class="fas fa-bath px-1"></i> </p>
+                                        </div>
+                                        <hr class="m-1">
+                                        <!-- Apartment Address-->
+                                        <p class="m-0 w-100 textWrapping"></p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Footer-->
+        <div data-role='footer' data-position='fixed' class="footer-nav-area">
+            <div class="container px-0">
+                <!-- Paste your Footer Content from here-->
+                <!-- Footer Content-->
+                <div class="footer-nav position-relative">
+                    <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+                       
+
+                        <li class="active"><a rel="external" href="#apartment-list-page"><span><i class="fas fa-th m-2" style="font-size:1.25rem"></i></span></a></li>
+
+                        <li> <a rel="external" href="PostRentalInfo.html"> <span> <i class="fas fa-plus-circle m-2" style="font-size:1.25rem"></i></span></a></li>
+
+                        
+
+                        <li><a rel="external" href="index.html#setting-page"><span> <i class="fas fa-cog m-2" style="font-size:1.25rem" ></i></span> </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Rental Info Detail-->
+    <div data-role="page" id="rental-detail-page">
+        <!--Header-->
+        <div data-role="header" data-position='fixed' class="header-area headerDetail">
+            <div class="container d-flex align-items-center justify-content-between px-3">
+                <!-- Back Button-->
+                <div class="back-button"><a href="#apartment-list-page"><i class="fas fa-arrow-left"></i></a></div>
+
+                <!--Edit Button Group-->
+                <!--After Loading complete page-->
+                <div>
+                    <ul class="editButtonGroup">
+                        <li>
+                            <a href="#" id="favorites-detail-rental" ><i class="fas fa-heart" style="color: #18fb51;"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" id="call-detail-rental"><i class="fas fa-phone text-success"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <!--After scroll up over ranger-->
+                <!-- Options-->
+                <div data-role="none" class="dropstart " style="display: none;">
+                    <button data-role="none" class="btn dropdown-toggle p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-three-dots-vertical"></i></button>
+                    <ul data-role="none" class="dropdown-menu p-1 dropdown-menu-post">
+                        <li><a href="#"><i class="bi bi-pencil-square px-1 "></i>Edit</a></li>
+                        <li><a href="#"><i class="bi bi-trash px-1 "></i>Delete</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--Main-->
+        <div data-role="main" class="ui-content page-content-wrapper p-0">
+            <div class=" blog-detail-content">
+                <div class="container p-0">
+                    <div class="blog-details-post-thumbnail position-relative">
+                        <!-- Post Image--><img id="rental-img" class=" w-100" src="img/RAP1.jpg" alt="">
+                    </div>
+                </div>
+                <div style="background-image: url('https://image.freepik.com/free-vector/hand-painted-watercolor-nature-background_23-2148941599.jpg');">
+               
+                    <div class="table-wrapper">
+                        <table class="fl-table">
+                            <thead>
+                            <tr>
+                                <th>Price</th>
+                                <th>Bedroom</th>
+                                <th>Bathroom</th>
+                                <th>Furniture types</th>
+                                <th>Type</th>
+                                <th>Property name</th>
+                                <th>Address</th>
+                                <th>Post date</th>
+                                <th>Note</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td> <span id="price"></span><span>/month</span></td>
+                                <td><span id="bedroom"></span> <i class="fas fa-bed px-1"></i></td>
+                                <td><span class="pr-2" id="bathroom"></span> <i class="fas fa-bath px-1"></i></td>
+                                <td><span class="font-weight-bold text-success" id="status"> </span></td>
+                                <td><span class="font-weight-bold text-success" id="type"> </span></td>
+                                <td><span class="pr-2" id="sqft"></span><span class="px-1"></span></td>
+                                <td><span class="mb-3 w-100 textWrapping" id="address"></span></td>
+                                <td>  <small id="rental-date-modify" class="mb-2"></small></td>
+                                <td><p id="description">.</p></td>
+                            </tr>
+                            <tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Comment Form-->
+                <div class="ratings-submit-form pb-3">
+                    <div class="container">
+                        <h6 class="mb-3">Submit a comment</h6>
+                        <form id="frm-post-comment">
+                            <div class="form-group">
+                                <textarea id="comment-content" class="form-control mb-3 border-0" name="comment" cols="30" rows="10" placeholder="Write a comment">                           </textarea>
+                            </div>
+                            <button class="btn btn-sm btn-primary" type="submit">Post Comment</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- All Comments-->
+                <div class="rating-and-review-wrapper pb-3 mt-3" style="margin-bottom: 100px;">
+                    <div class="container">
+                        <h6 class="mb-3">All comments</h6>
+                        <!-- Rating Review-->
+                        <div class="rating-review-content">
+                            <ul class="ps-2" id="list-comment" class="listCommentStyle" data-role="listview">
+                                <li class="single-user-review d-flex">
+                                   
+                                </li>
+                                
+                                   
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    
+    <div data-role='page' id='setting-page' >
+        <div style="background-image: url('https://image.freepik.com/free-vector/hand-painted-watercolor-nature-background_23-2148941599.jpg');">
+        
+        <div data-role='main' class="ui-content page-content-wrapper px-0 py-3">
+            
+            
+                
+                <!-- Setting Account Card-->
+                
+                    
+                        <div class="user-account d-flex" style="height: 700px;">
+                            <img id="setting-avatar" class="shadow user-avatar" src="img/bg-img/x.jfif">
+                            <div>
+                                <h4><span id="setting-username"></span></h4>
+                                <p class="mt-3 mb-1"><i class="fas fa-at" style="color: rgb(0, 255, 21); margin-right: .5rem;"></i><span id="setting-email"></span></p>
+                                <div class="single-setting-panel setting-logout"><a id="logoutx"  rel="external" href="index.html">
+                                    <div class="icon-wrapper" style="background:#00ff80;"><i class="bi bi-box-arrow-right"></i></div>Logout</a></div>
+                            </div>
+                            
+                            <div data-role='footer' data-position='fixed' class="footer-nav-area">
+                                <div class="container px-0">
+                                    <!-- Paste your Footer Content from here-->
+                                    <!-- Footer Content-->
+                                    <div class="footer-nav position-relative">
+                                        <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+                                          
+                    
+                                            <li><a rel="external" href="ApartmentList.html"><span><i class="fas fa-th m-2" style="font-size:1.25rem"></i></span></a></li>
+                    
+                                            <li> <a rel="external" href="PostRentalInfo.html"> <span> <i class="fas fa-plus-circle m-2" style="font-size:1.25rem"></i></span></a></li>
+                    
+                                        
+                                            <li class="active"><a rel="external" href="index.html#setting-page"><span> <i class="fas fa-cog m-2" style="font-size:1.25rem" ></i></span> </a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         <!-- Footer Nav-->
+                    </div>
+                    </div>
+                
+            
+        </div>
+
+
+       
+    </div>
+                        
+                        
+                </div>
+               
+
+    <script src="cordova.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/default/dark-mode-switch.js"></script>
+    <script src="js/ion.rangeSlider.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/default/active.js"></script>
+    <script src="js/default/clipboard.js"></script>
+    <!-- PWA-->
+    <script src="js/pwa.js"></script>
+
+    <script src="js/index.js"></script>
+
+
+
+    <style>
+        *{
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+        body{
+            font-family: Helvetica;
+            -webkit-font-smoothing: antialiased;
+            background: rgba( 71, 147, 227, 1);
+        }
+        h2{
+            text-align: center;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: white;
+            padding: 30px 0;
+        }
+        
+        /* Table Styles */
+        
+        .table-wrapper{
+            margin: 10px 70px 70px;
+            box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+        }
+        
+        .fl-table {
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: normal;
+            border: none;
+            border-collapse: collapse;
+            width: 800%;
+            max-width: 100%;
+            white-space: nowrap;
+            background-color: white;
+        }
+        
+        .fl-table td, .fl-table th {
+            text-align: center;
+            padding: 8px;
+        }
+        
+        .fl-table td {
+            border-right: 1px solid #f8f8f8;
+            font-size: 12px;
+        }
+        
+        .fl-table thead th {
+            color: #ffffff;
+            background: #4FC3A1;
+        }
+        
+        
+        .fl-table thead th:nth-child(odd) {
+            color: #ffffff;
+            background: #324960;
+        }
+        
+        .fl-table tr:nth-child(even) {
+            background: #F8F8F8;
+        }
+        
+        /* Responsive */
+        
+        @media (max-width: 767px) {
+            .fl-table {
+                display: block;
+                width: 100%;
+            }
+            .table-wrapper:before{
+                content: "Scroll horizontally >";
+                display: block;
+                text-align: right;
+                font-size: 11px;
+                color: white;
+                padding: 0 0 10px;
+            }
+            .fl-table thead, .fl-table tbody, .fl-table thead th {
+                display: block;
+            }
+            .fl-table thead th:last-child{
+                border-bottom: none;
+            }
+            .fl-table thead {
+                float: left;
+            }
+            .fl-table tbody {
+                width: auto;
+                position: relative;
+                overflow-x: auto;
+            }
+            .fl-table td, .fl-table th {
+                padding: 20px .625em .625em .625em;
+                height: 60px;
+                vertical-align: middle;
+                box-sizing: border-box;
+                overflow-x: hidden;
+                overflow-y: auto;
+                width: 120px;
+                font-size: 13px;
+                text-overflow: ellipsis;
+            }
+            .fl-table thead th {
+                text-align: left;
+                border-bottom: 1px solid #f7f7f9;
+            }
+            .fl-table tbody tr {
+                display: table-cell;
+            }
+            .fl-table tbody tr:nth-child(odd) {
+                background: none;
+            }
+            .fl-table tr:nth-child(even) {
+                background: transparent;
+            }
+            .fl-table tr td:nth-child(odd) {
+                background: #F8F8F8;
+                border-right: 1px solid #E6E4E4;
+            }
+            .fl-table tr td:nth-child(even) {
+                border-right: 1px solid #E6E4E4;
+            }
+            .fl-table tbody td {
+                display: block;
+                text-align: center;
+            }
+        }
+    </style>
+</body>
+</html>
